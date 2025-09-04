@@ -1,0 +1,4 @@
+Prefix,Status,Role,VLAN,Description
+{% for prefix in queryset -%}
+{{ prefix.prefix }},{{ prefix.status }},{{ prefix.role }},{{ prefix.vlan }},"{{ prefix.description }}"
+{% endfor %}

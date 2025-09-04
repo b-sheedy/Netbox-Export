@@ -1,0 +1,4 @@
+VID,Name,Status,Role,Site,Prefixes,Description
+{% for vlan in queryset -%}
+{{ vlan.vid }},{{ vlan.name }},{{ vlan.status }},{{ vlan.role }},{{ vlan.site }},"{{ vlan.prefixes.all()|list|join(", ") }}","{{ vlan.description }}"
+{% endfor %}

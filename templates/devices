@@ -1,0 +1,4 @@
+Name,Status,Role,Site,Location,Device Type,Primary IP,Virtual Chassis,Description
+{% for device in queryset -%}
+{{ device.name }},{{ device.status }},{{ device.role }},{{ device.site }},{{device.location }},{{ device.device_type }},{{ device.primary_ip }},{{ device.virtual_chassis }},"{{ device.description }}"
+{% endfor %}

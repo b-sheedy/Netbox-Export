@@ -1,0 +1,7 @@
+IP Address,Status,Parent,Interface,Description
+{% for address in queryset -%}
+{{ address.address }},{{ address.status }},
+{%- if address.assigned_object_type.app_label == "dcim" %}{{ address.assigned_object.device }}
+{%- elif address.assigned_object_type.app_label == "virtualization" %}{{ address.assigned_object.virtual_machine }}{% endif %},
+{{- address.assigned_object }},"{{ address.description }}"
+{% endfor %}

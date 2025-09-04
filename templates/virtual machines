@@ -1,0 +1,4 @@
+Name,Status,Role,Site,IP Address,Description
+{% for vm in queryset -%}
+{{ vm.name }},{{ vm.status }},{{ vm.role }},{{ vm.site }},{{ vm.primary_ip }},"{{ vm.description }}"
+{% endfor %}
